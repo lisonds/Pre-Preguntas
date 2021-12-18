@@ -13,15 +13,20 @@ public class Publicacion {
     private String imagen;
     private String fechaPublicacion;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="fk_usuario", nullable = false)
+    private Usuario usuario;
+
     public Publicacion(){
 
     }
 
-    public Publicacion(int idPublicacion, String contenido, String imagen, String fechaPublicacion) {
+    public Publicacion(int idPublicacion, String contenido, String imagen, String fechaPublicacion, Usuario usuario) {
         this.idPublicacion = idPublicacion;
         this.contenido = contenido;
         this.imagen = imagen;
         this.fechaPublicacion = fechaPublicacion;
+        this.usuario = usuario;
     }
 
     public int getIdPublicacion() {
@@ -56,5 +61,12 @@ public class Publicacion {
         this.fechaPublicacion = fechaPublicacion;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }
 

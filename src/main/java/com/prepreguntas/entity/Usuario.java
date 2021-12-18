@@ -1,6 +1,8 @@
 package com.prepreguntas.entity;
 
 import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
 @Table(name = "usuarios")
@@ -13,15 +15,19 @@ public class Usuario {
     private String correo;
     private String password;
 
+    @OneToMany(mappedBy = "usuario")
+    private List<Publicacion> publicacion;
+
     public Usuario(){
 
     }
 
-    public Usuario(int id, String nombre, String correo, String password){
+    public Usuario(int id, String nombre, String correo, String password, List<Publicacion> publicacion) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
         this.password = password;
+        this.publicacion = publicacion;
     }
 
     public int getId() {
@@ -56,4 +62,13 @@ public class Usuario {
         this.password = password;
     }
 
+    public List<Publicacion> getPublicacion() {
+        return publicacion;
+    }
+
+    public void setPublicacion(List<Publicacion> publicacion) {
+        this.publicacion = publicacion;
+    }
 }
+
+
