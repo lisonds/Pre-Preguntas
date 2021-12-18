@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
-/*dale mas o menos*/
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
