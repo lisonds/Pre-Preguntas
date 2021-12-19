@@ -1,6 +1,7 @@
 package com.prepreguntas.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "publicaciones")
@@ -16,6 +17,9 @@ public class Publicacion {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="fk_usuario", nullable = false)
     private Usuario usuario;
+
+    @OneToMany(mappedBy = "publicacion")
+    private List<Comentario> comentario;
 
     public Publicacion(){
 

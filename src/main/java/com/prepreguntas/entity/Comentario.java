@@ -13,6 +13,10 @@ public class Comentario {
     private String fechaCreacion;
     private String imagen;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_publicacion", nullable = false)
+    private Publicacion publicacion;
+
     public Comentario() {
 
     }
