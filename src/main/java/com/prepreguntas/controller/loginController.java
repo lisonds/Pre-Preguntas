@@ -4,37 +4,28 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.prepreguntas.entity.Usuario;
 import com.prepreguntas.repo.UsuarioRepository;
 
-@Controller
-
+@RestController
+@RequestMapping("/login")
 public class loginController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@GetMapping("/login")
-	public String Logint() {
+	@GetMapping
+	List<Usuario> Logint() {
 		
-		return "view/login";
+		return usuarioRepository.findAll();
 	}
-	@PostMapping("/login")
-	public String Loguear(Model model,
-			@RequestParam String nombre,
-			@RequestParam String email,
-			@RequestParam String password,
-			@RequestParam String password2) {
-		model.addAttribute("nombre",nombre);
-		model.addAttribute("email",email);
-		model.addAttribute("password",password);
-		model.addAttribute("password2",password2);
-		return "prueba";
+	@PostMapping
+	Usuario crear(@RequestBody Usuario usuario) {
+		return usuarioRepository.save(usuario);
 	}
-	
 }
