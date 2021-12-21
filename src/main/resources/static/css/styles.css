@@ -895,4 +895,8 @@ tr:hover td{
 	background-color: #369681;
 	color: white;
 }
+/*validadciones*/
+.alert{
+    box-shadow: 0 0 1rem red;
+}
    

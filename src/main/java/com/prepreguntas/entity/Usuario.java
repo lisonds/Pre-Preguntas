@@ -1,6 +1,9 @@
 package com.prepreguntas.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 import java.util.List;
 
 
@@ -11,8 +14,12 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotEmpty
     private String nombre;
+    @NotEmpty
+    @Email
     private String correo;
+    @NotEmpty
     private String password;
 
     @OneToMany(mappedBy = "usuario")

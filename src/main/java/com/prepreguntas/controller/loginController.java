@@ -5,9 +5,12 @@ package com.prepreguntas.controller;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -40,7 +43,11 @@ public class loginController {
 	}
 	/*Guardar formulario*/
 	@PostMapping("/login")
-	public String guardar(Usuario usuario){
+	public String guardar(@Valid Usuario usuario, BindingResult result,Model model){
+		if(result.hasErrors()) {
+			return "view/login";
+		}
+		
 		usuarioDao.Guardar(usuario);
 		return"redirect:administrador";
 		
