@@ -12,7 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.prepreguntas.DAO.IUsuarioDao;
 import com.prepreguntas.entity.Usuario;
@@ -49,8 +51,16 @@ public class loginController {
 		}
 		
 		usuarioDao.Guardar(usuario);
-		return"redirect:administrador";
+		return"redirect:/administrador";
 		
+	}
+	@RequestMapping(value = "/eliminar/{id}")
+	public String Eliminar(@PathVariable(value="id") int id) {
+		if(id>0) {
+			usuarioDao.delete(id);
+			
+		}
+		return"redirect:/administrador";
 	}
 	
 	

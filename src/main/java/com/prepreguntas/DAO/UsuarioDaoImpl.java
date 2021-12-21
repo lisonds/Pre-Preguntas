@@ -24,10 +24,31 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 	@Override
 	@Transactional
 	public void Guardar(Usuario usuario) {
-	
+		if(usuario.getId()>0) {
+			em.merge(usuario);
+		}else {
 			em.persist(usuario);
+		}
+			
 		
 	}
+	@Override
+	@Transactional(readOnly = true)
+	public Usuario BuscarID(int id) {
+		// TODO Auto-generated method stub
+		return em.find(Usuario.class, id);
+	}
+	
+	
+	@Override
+	@Transactional
+	public void delete(int id) {
+		em.remove(BuscarID(id));
+		}
+
+	
+
+	
 	
 }
 
