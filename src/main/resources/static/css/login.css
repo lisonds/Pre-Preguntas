@@ -122,8 +122,7 @@ p {
 	display: block;
 }
 
-@
-keyframes animateForm {from { opacity:0;
+@keyframes animateForm {from { opacity:0;
 	
 }
 

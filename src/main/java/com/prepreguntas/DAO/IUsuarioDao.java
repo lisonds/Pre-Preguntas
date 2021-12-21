@@ -6,4 +6,9 @@ import com.prepreguntas.entity.Usuario;
 
 public interface IUsuarioDao {
 	public List<Usuario> findAll();
+	
+	
+	/*IMPLEMENTAR PARA GUARDA*/
+	
+	public void Guardar(Usuario usuario);
 }

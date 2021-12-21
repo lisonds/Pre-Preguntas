@@ -21,6 +21,14 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 		return em.createQuery("from Usuario").getResultList();
 	}
 	
+	@Override
+	@Transactional
+	public void Guardar(Usuario usuario) {
+	
+			em.persist(usuario);
+		
+	}
+	
 }
 
  
