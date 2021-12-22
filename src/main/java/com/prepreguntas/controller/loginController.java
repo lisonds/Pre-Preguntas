@@ -41,7 +41,7 @@ public class loginController {
 	}
 	
 	/* se encarga de mostrar el formulario*/
-	@GetMapping("/login")
+	@GetMapping({"/login","/"})
 	public String crearUauario(Map<String, Object> model) {
 		Usuario usuario=new Usuario();
 		model.put("usuario", usuario);
