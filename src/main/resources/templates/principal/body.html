@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<body>
+           
+           <div class="middle" th:fragment="body">
+               <form  class="create-post" >
+                   <div class="profile-picture">
+                       <img src="./imagen/01.PNG" alt="">
+                   </div>
+                   <input type="text" placeholder="Realice su pregunta..." id="create-post">
+                   <label id="themep" for="create-post" class="btn btn-primary">publicar</label>
+               </form>
+               <!--===========Publicaciones=======--> 
+               <div class="feeds">
+                   <div class="feed">
+                       <div class="head">
+                           <div class="user">
+                               <div class="profile-picture">
+                                   <img src="./imagen/01.PNG" alt="">
+                               </div>
+                               <div class="ingo">
+                                   <h3>Tulio Lisonds</h3>
+                                   <small> 15 minutos</small>
+                               </div>
+                               
+                           </div>
+                           <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                       </div>
+                       
+                       <div class="photo">
+                           <img src="./imagen/Ejercicio1.jpg" alt="">
+                       </div>
+                       <div class="action-buttons">
+                           <div class="interaction-buttons">
+                                <i class="uil uil-thumbs-up"></i>
+                                <i class="uil uil-heart-alt"></i>
+                                <i class="uil uil-comment-dots"></i>
+                           </div>
+                           <div class="bookmark">
+                            
+                           </div>
+                       </div>
+                       <div >
+                           <p><b>Tulio Lison</b> ipsum dolor sit amet consectetur adipisicing elit. Eligendi.</p>
+                       </div>
+                       
+                       <div class="caption" id="coment">
+                            <i  href="#" class="comments text-muted">277 comentarios</i>
+                        </div>
+                    
+                   </div>
+               </div>
+
+               <div class="feeds">
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-picture">
+                                <img src="./imagen/01.PNG" alt="">
+                            </div>
+                            <div class="ingo">
+                                <h3>Tulio Lisonds</h3>
+                                <small> 15 minutos</small>
+                            </div>
+                            
+                        </div>
+                        <span class="edit">
+                             <i class="uil uil-ellipsis-h"></i>
+                         </span>
+                    </div>
+                    
+                    <div class="photo">
+                        <img src="./imagen/ejercicio2.jpg" alt="">
+                    </div>
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                             <i class="uil uil-thumbs-up"></i>
+                             <i class="uil uil-heart-alt"></i>
+                             <i class="uil uil-comment-dots"></i>
+                        </div>
+                        <div class="bookmark">
+                         
+                        </div>
+                    </div>
+                    <div >
+                        <p><b>Tulio Lison</b> ipsum dolor sit amet consectetur adipisicing elit. Eligendi.</p>
+                    </div>
+                    <div class="caption" id="coment">
+                         <i  href="#" class="comments text-muted">277 comentarios</i>
+                     </div>
+                </div>
+            </div>
+
+           </div>
+         
+     
+
+
+</body>
+
+</html>
