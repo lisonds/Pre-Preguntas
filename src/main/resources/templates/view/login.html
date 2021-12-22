@@ -16,24 +16,27 @@
 		<input type="checkbox" id="toggle">
 		<div class="signin">
 			<h2>CUENTA PRE-PREGUNTAS</h2>
-			<form>
+			<form th:action="@{/login}" th:object="${usuario}" method="post">
 				<div class="social">
-					<a href="#"><i class="fab fa-google-plus-g"></i></a> <a href="#"><i
-						class="fab fa-facebook-f"></i></a> <a href="#"><i
-						class="fab fa-linkedin-in"></i></a>
+					<a href="#"><i class="fab fa-google-plus-g"></i></a> 
+					<a href="#"><i class="fab fa-facebook-f"></i></a> 
+					<a href="#"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<p>Or use enter info</p>
-				<input type="email" placeholder="Email"> <input
-					type="password" placeholder="Password"> <small>Forgot
-					Password</small> <input type="submit" value="Login"> <small>Don't
-					have an account?<label for="toggle">Sign Up</label>
+				<input type="email" th:fiel="*{correo}" name="correo" id="correo" placeholder="Email"> 
+					<small style="color:red;" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></small>
+				<input type="password" th:fiel="*{password}" name="password" id="password" placeholder="Password"> 
+					<small style="color:red;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small> 
+				<small>Forgot Password</small> 
+				<input type="submit" value="Login" > 
+				<small>Don't have an account?<label for="toggle">Sign Up</label>
 				</small>
 			</form>
 		</div>
 
 		<div class="signup">
 			<h2>CREAR UNA CUENTA</h2>
-			<form th:action="@{/login}" th:object="${usuario}" method="post">
+			<form th:action="@{/loginCrear}" th:object="${usuario}" method="post">
 				<div class="social">
 					<a href="https//gmail.com"><i class="fab fa-google-plus-g"></i></a>
 					<a href="https//facebook.com"><i class="fab fa-facebook-f"></i></a>

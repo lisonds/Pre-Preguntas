@@ -2,20 +2,15 @@ package com.prepreguntas.DAO;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
 import com.prepreguntas.entity.Usuario;
 
-public interface IUsuarioDao {
-	/*IMPLEMENTAR PARA MOSTRAR*/
-	public List<Usuario> findAll();
+public interface IUsuarioDao extends JpaRepository<Usuario, Integer> {
+	/*esto es para buscar el correo en el usuario 
+	 en base de datos  SELECT * FROM USUARIO WHERE CORREO=VARIABLE*/
 	
+	List<Usuario> findByCorreo(String correo); 
 	
-	/*IMPLEMENTAR PARA GUARDA*/
-	
-	public void Guardar(Usuario usuario);
-	
-	/*implementar para editar busqueda de uno solo por id*/
-	public Usuario BuscarID(int id);
-	
-	/*IMPLEMENTAR ELIMINAR*/
-	public void delete(int id);
 }

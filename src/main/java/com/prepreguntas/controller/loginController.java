@@ -3,6 +3,7 @@ package com.prepreguntas.controller;
 
 
 
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -18,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.prepreguntas.DAO.IUsuarioDao;
 import com.prepreguntas.entity.Usuario;
+import com.prepreguntas.service.IUsuarioService;
+
+
 
 
 
@@ -26,13 +30,13 @@ import com.prepreguntas.entity.Usuario;
 
 public class loginController {
 	@Autowired
-	private IUsuarioDao usuarioDao;
+	private IUsuarioService usuarioService;
 	
 	
 	/* muestra los datos de base de datos Usuario*/
 	@GetMapping("/administrador")
 	public String Usuarios(Model model) {
-		model.addAttribute("usuarios",usuarioDao.findAll());
+		model.addAttribute("usuarios",usuarioService.findAll());
 	return "admin/admin";
 	}
 	
@@ -44,25 +48,34 @@ public class loginController {
 		return"view/login";
 	}
 	/*Guardar formulario*/
-	@PostMapping("/login")
+	@PostMapping("/loginCrear")
 	public String guardar(@Valid Usuario usuario, BindingResult result,Model model){
 		if(result.hasErrors()) {
 			return "view/login";
 		}
 		
-		usuarioDao.Guardar(usuario);
+		usuarioService.Guardar(usuario);
 		return"redirect:/administrador";
 		
 	}
 	@RequestMapping(value = "/eliminar/{id}")
 	public String Eliminar(@PathVariable(value="id") int id) {
 		if(id>0) {
-			usuarioDao.delete(id);
+			usuarioService.delete(id);
 			
 		}
 		return"redirect:/administrador";
 	}
+	@PostMapping("/login")
+	public String BuscarCorreo(@Valid Usuario usuario, BindingResult result,Model model) {
+		
+		List<Usuario> lista = usuarioService.busrcarEmail(usuario.getCorreo());
+		for(Usuario u:lista){
+			System.out.println("encontro "+u.getNombre());
+		}
+			return"redirect:/prepreguntas";
+		}
+	}
 	
 	
-	
-}
+
