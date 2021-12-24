@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.prepreguntas.DAO.IUsuarioDao;
+
 import com.prepreguntas.entity.Usuario;
 import com.prepreguntas.service.IUsuarioService;
 
