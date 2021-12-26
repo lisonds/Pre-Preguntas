@@ -6,10 +6,10 @@ public interface BaseServices<E>  {
 
     // CREAMOS LOS METODOS COMUNES QUE SE USAN EN CADA ENTIDAD, (CRUD)
 
-    public List<E> findAll() throws Exception;     //Buscar o encontrar todos los registros.
-    public E findById(int id) throws Exception;   //Encontrar por id.
-    public E saveOne(E entity) throws Exception;   //Guardad o registrar un objeto Entidad.
-    public E updateOne(E entity,int id) throws Exception; //Actualizar un registro.
-    public void deleteById(int id) throws Exception;   //Eliminar un _Registro.
+    public List<E> findAll();     //Buscar o encontrar todos los registros.
+    public E findById(int id);   //Encontrar por id.
+    public E saveOne(E entity);   //Guardad o registrar un objeto Entidad.
+    public E updateOne(E entity,int id); //Actualizar un registro.
+    public void deleteById(int id);   //Eliminar un _Registro.
 
 }
