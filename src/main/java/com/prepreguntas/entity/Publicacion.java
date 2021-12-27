@@ -1,6 +1,8 @@
 package com.prepreguntas.entity;
 
 import javax.persistence.*;
+
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -9,12 +11,15 @@ public class Publicacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_publicacion")
     private int idPublicacion;
     private String contenido;
     private String imagen;
-    private String fechaPublicacion;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_publicacion")
+    private Date fechaPublicacion;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="fk_usuario", nullable = false)
     private Usuario usuario;
 
@@ -25,14 +30,11 @@ public class Publicacion {
 
     }
 
-    public Publicacion(int idPublicacion, String contenido, String imagen, String fechaPublicacion, Usuario usuario) {
-        this.idPublicacion = idPublicacion;
-        this.contenido = contenido;
-        this.imagen = imagen;
-        this.fechaPublicacion = fechaPublicacion;
-        this.usuario = usuario;
-    }
-
+    	@PrePersist
+    	public void prePersist() {
+    		fechaPublicacion=new Date();
+    	}
+  
     public int getIdPublicacion() {
         return idPublicacion;
     }
@@ -57,11 +59,11 @@ public class Publicacion {
         this.imagen = imagen;
     }
 
-    public String getFechaPublicacion() {
+    public Date getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(String fechaPublicacion) {
+    public void setFechaPublicacion(Date fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 

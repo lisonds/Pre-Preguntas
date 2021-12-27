@@ -210,32 +210,36 @@
 
            </div>
 <div>
-<h1>Usuarios</h1>
-	<table>
+
+
+<h1>TABlA DE PUBLICACIONES </h1>
+<table>
 	<thead>
 		<tr>
 			<th>id</th>
-			<th>nombre</th>
-			<th>email</th>
-			<th>contrasenia</th>
-			<th>contrasenia</th>
-			<th>Eliminar</th>
+		<!--<th>nombre</th>
+			<th>contenido</th>
+			<th>Fecha de publicacion</th>
+			<th>FOTO</th>
+			<th>Eliminar</th> -->
 			
 		</tr>
 	</thead>
 	<tbody>
-		<tr th:each="usuario:${usuarios}" >
-			<td><a class ="btn" th:href="@{/administrador/} + ${usuario.id}" th:text="${usuario.id}"></a></td>
-			<td th:text="${usuario.nombre}"></td>
-			<td th:text="${usuario.correo}"></td>
-			<td th:text="${usuario.password}"></td>
+ 
+		<tr th:each="publicacion:${usuario.publicacion}">
+			<td th:text="${publicacion.contenido}"></td>
+			<!-- <td th:text="${publicacion.contenido}"></td>
+			<td th:text="${publicacion.fechaPublicacion}"></td>
+			<td th:text="${publicacion.imagen}"></td>
+			<td th:text="${publicacion.usuario}"></td>
 			<td ><a th:href="@{/eliminar/}+${usuario.id}" th:text="'Eliminar'"
 			onclick="return confirm('Estas seguro que quieres eliminar?');"></a></td>
-			
+			 -->
 		</tr>
+		
 	</tbody>
 </table>
-
  	
 </div>
 

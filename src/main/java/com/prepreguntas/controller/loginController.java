@@ -34,11 +34,7 @@ public class loginController {
 	
 	
 	/* muestra los datos de base de datos Usuario*/
-	@GetMapping("/administrador")
-	public String Usuarios(Model model) {
-		model.addAttribute("usuarios",usuarioService.findAll());
-	return "admin/admin";
-	}
+
 	
 	/* se encarga de mostrar el formulario*/
 	@GetMapping({"/login","/"})

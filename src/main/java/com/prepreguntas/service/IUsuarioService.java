@@ -14,7 +14,7 @@ public interface IUsuarioService {
 	public void Guardar(Usuario usuario);
 	
 	/*implementar para editar busqueda de uno solo por id*/
-	public Usuario BuscarID(int id);
+	public Usuario findOne(int id);
 	
 	/*IMPLEMENTAR ELIMINAR*/
 	public void delete(int id);

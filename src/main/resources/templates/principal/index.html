@@ -42,7 +42,7 @@
 <div class="customize-theme">
     <div class="card">
                
-        <form action="" method="post" enctype="multipart/form-data">
+        <form th:action="@{/publicacion/form}" th:object="${publicacion}" method="post" enctype="multipart/form-data">
             <h2>Comparte contenido</h2>
             <p>realice las preguntas necesarias</p>
             <!--Font sizes-->
@@ -50,14 +50,14 @@
                 <h4>Font size</h4>
                 <div class="container-flex">
                     <div class="publicar-bar">
-                        <textarea type="publicar" placeholder="comenta tu publicacion"></textarea>
+                        <textarea type="text" th:field="*{contenido}" placeholder="comenta tu publicacion"></textarea>
                     </div>
                 </div>
                 <div >
                     <label for="file-upload" class="bg1">
                         <i class="fa fa-cloud-upload"></i> Subir archivo
                     </label>
-                    <input id="file-upload" type="file"/>
+                    <input th:field="*{imagen}"  id="file-upload" type="file"/>
                     
                 </div>
                <!--

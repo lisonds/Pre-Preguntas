@@ -28,14 +28,16 @@ public class IUsuarioServiceImpl implements IUsuarioService {
 	public void Guardar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		usuarioDao.save(usuario);
+		
 	}
 	
 	@Override
 	@Transactional(readOnly = true)
-	public Usuario BuscarID(int id) {
+	public Usuario findOne(int id) {
 		// TODO Auto-generated method stub
 		return usuarioDao.findById(id).orElse(null);
 	}
+	
 	@Transactional
 	@Override
 	public void delete(int id) {
@@ -48,6 +50,8 @@ public class IUsuarioServiceImpl implements IUsuarioService {
 		// TODO Auto-generated method stub
 		return (List<Usuario>) usuarioDao.findByCorreo(correo);
 	}
+
+	
 
 	
 	

@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,11 +23,11 @@ public class Usuario {
     @NotEmpty
     private String password;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Publicacion> publicacion;
+    @OneToMany(mappedBy = "usuario",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Publicacion> publicaciones;
 
     public Usuario(){
-
+    	publicaciones=new ArrayList<Publicacion>();
     }
 
     public Usuario(int id, String nombre, String correo, String password, List<Publicacion> publicacion) {
@@ -34,7 +35,7 @@ public class Usuario {
         this.nombre = nombre;
         this.correo = correo;
         this.password = password;
-        this.publicacion = publicacion;
+        this.publicaciones = publicacion;
     }
 
     public int getId() {
@@ -70,12 +71,16 @@ public class Usuario {
     }
 
     public List<Publicacion> getPublicacion() {
-        return publicacion;
+        return publicaciones;
     }
 
     public void setPublicacion(List<Publicacion> publicacion) {
-        this.publicacion = publicacion;
+        this.publicaciones = publicacion;
+    }
+    
+    /*Cuando se une con otra tabla sse crea este metodo para agregar*/
+    public void AgregarPublicacion(Publicacion publicacion) {
+    	publicaciones.add(publicacion);
     }
 }
-
 
