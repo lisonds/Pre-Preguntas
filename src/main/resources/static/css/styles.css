@@ -539,6 +539,8 @@ main .container .right{
     background: var(--color-light);
     border-radius: var(--border-radius);
     padding: var(--search-padding);
+    width:80vw;
+    height:20vm;
     
 }
 
@@ -557,10 +559,12 @@ main .container .right{
 }
 
 .form-file{
-    font-size: 1em;
+    font-size: 2em;
     margin: 10px 0;
     width: 100%;
+    
 }
+
 
 .background{
     margin-top: 2rem;
@@ -600,6 +604,7 @@ main .container .right{
     background: white;
     color: black;
 }
+
 
 /*cOMENTARIOS*/
 .customize-coment{
