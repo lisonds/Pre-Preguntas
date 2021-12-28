@@ -28,7 +28,7 @@
 				<input type="password" th:fiel="*{password}" name="password" id="password" placeholder="Password"> 
 					<small style="color:red;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small> 
 				<small>Forgot Password</small> 
-				<input type="submit" value="Login" > 
+				<input type="submit" value="Login"> 
 				<small>Don't have an account?<label for="toggle">Sign Up</label>
 				</small>
 			</form>
