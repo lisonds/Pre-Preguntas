@@ -599,9 +599,10 @@ main .container .right{
 .bg1{
     background: white;
     color: black;
+    
 }
-.bg2{
-    background: white;
+.btn_publicar{
+    background:red;
     color: black;
 }
 
