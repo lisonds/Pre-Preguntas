@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
   <!--iconos Estrella-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"/>
-    <link rel="stylesheet" href="css/Produc.css">
+    <link rel="stylesheet" th:href="@{css/Produc.css}">
+    <link rel="stylesheet" th:href="@{css/styles.css}">
     <title>PRE-PREGUNTAS </title>
 </head>
 <body>
@@ -263,7 +263,7 @@
 
                       <div class="producto">
                         <div class="image__container">
-                          <img src="https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305" alt="">
+                          <img th:src="@{https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305}" alt="">
                         </div>
                         <div class="producto__footer">
                           <h1>Rejoles Originales</h1>
@@ -302,6 +302,13 @@
             
        </div>
    </main>
+  <script th:src="@{/js/index.js}"></script>
+<script>
+    $(".act-reply").click(function(){
+        $(this).parents(".userbox").find(".input-comment").toggleClass("show");
+        $(this).toggleClass("active");
+    });
+</script>
 </body>
 
 </html>
