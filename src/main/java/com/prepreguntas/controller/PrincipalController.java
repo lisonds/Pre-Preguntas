@@ -30,7 +30,7 @@ public class PrincipalController {
 		
 		
 		@PostMapping("/principal")
-		public String BuscarCorreo(@Valid Usuario usuario, BindingResult result,Model model) {
+		public String BuscarCorreo(@Valid Usuario usuario, BindingResult result,Map<String, Object> model) {
 			
 			int id=0;
 			List<Usuario> lista = usuarioService.busrcarEmail(usuario.getCorreo());
@@ -43,14 +43,17 @@ public class PrincipalController {
 					id=v.getId();
 				}
 			Usuario usuario1=usuarioService.findOne(id);
-				model.addAttribute("nombre",usuario1.getNombre());
-				model.addAttribute("correo",usuario1.getCorreo());
-				model.addAttribute("id",usuario1.getId());
+				model.put("nombre",usuario1.getNombre());
+				model.put("correo",usuario1.getCorreo());
+				model.put("id",usuario1.getId());
 				Publicacion publicacion=new Publicacion();
 				publicacion.setUsuario(usuario1);
 				
-				model.addAttribute("publicacion",publicacion);
-				model.addAttribute("titulo"," crea tu publicacion");
+				model.put("publicacion",publicacion);
+				model.put("usuario", usuario1);
+				model.put("titulo"," crea tu publicacion");
+				
+				System.out.println("prueba "+publicacion.getIdPublicacion());
 				return"principal/index";
 			}
 			
@@ -58,6 +61,7 @@ public class PrincipalController {
 		@PostMapping("/publicacion/form")
 		public String CapturarPublicacion(Publicacion publicacion,Model model, @RequestParam("file") MultipartFile imagen) {
 			/*EXTRAENDO IMAGEN PARA SUBIR AL BASE DE DATOS*/
+			System.out.println("Antes del if");
 			if(!imagen.isEmpty()) {
 				System.out.println("llego asta aqui");
 				Path directoriaoRecursos=Paths.get("src//main//resources//static/uploads");
@@ -77,7 +81,7 @@ public class PrincipalController {
 			
 			System.out.println(publicacion.getContenido());
 			System.out.println(publicacion.getImagen());
-			return "redirect:/principal";
+			return "principal/index";
 		}
 		
 		

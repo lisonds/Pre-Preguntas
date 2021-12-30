@@ -58,6 +58,7 @@ public class AdminController {
 		}
 		 
 		model.put("usuario",usuario);
+		
 		//model.put("titulo", "Detalle cliente: " + cliente.getNombre());
 		
 		return "admin/admin2";
