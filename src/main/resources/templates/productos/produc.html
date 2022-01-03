@@ -66,7 +66,7 @@
                     <div class="productos__center">
                       <div class="producto" th:each="producto:${productos}">
                         <div class="image__container">
-                          <img src="https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305" alt="">
+                          <img th:text="${producto.imagen}" alt="">
                         </div>
 
                         <div class="producto__footer">
