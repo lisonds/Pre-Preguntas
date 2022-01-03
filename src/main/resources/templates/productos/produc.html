@@ -64,12 +64,13 @@
                 <!--DESARROLLAMOS PRODUCTOS-->
                 <section class="productos">
                     <div class="productos__center">
-                      <div class="producto">
+                      <div class="producto" th:each="producto:${productos}">
                         <div class="image__container">
                           <img src="https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305" alt="">
                         </div>
+
                         <div class="producto__footer">
-                          <h1>Rejoles Originales</h1>
+                          <h1 th:text="${producto.descripcion}">Rejoles Originales</h1>
                           <div class="rating">
                             <span>
                                 <i class="uil uil-star"></i>
@@ -87,152 +88,19 @@
                                 <i class="uil uil-star"></i>
                             </span>
                           </div>
-                          <div class="price">$102.00</div>
+                          <div th:text="'$' + ${producto.precio}" class="price">$102.00</div>
                         </div>
+
                         <div class="bottom-producto">
                           <div class="btn__group">
                             <a href="#" class="btn addToCart">Añadir carrito</a>
                             <a href="producto-detalles.html" class="btn view">Vista</a>
                           </div>
                         </div>
-                      </div> 
-
-                      <div class="producto">
-                        <div class="image__container">
-                          <img src="https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305" alt="">
-                        </div>
-                        <div class="producto__footer">
-                          <h1>Rejoles Originales</h1>
-                          <div class="rating">
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                          </div>
-                          <div class="price">$102.00</div>
-                        </div>
-                        <div class="bottom-producto">
-                          <div class="btn__group">
-                            <a href="#" class="btn addToCart">Añadir carrito</a>
-                            <a href="producto-detalles.html" class="btn view">Vista</a>
-                          </div>
-                        </div>
-                      </div> 
-
-                      <div class="producto">
-                        <div class="image__container">
-                          <img src="https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305" alt="">
-                        </div>
-                        <div class="producto__footer">
-                          <h1>Rejoles Originales</h1>
-                          <div class="rating">
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                          </div>
-                          <div class="price">$102.00</div>
-                        </div>
-                        <div class="bottom-producto">
-                          <div class="btn__group">
-                            <a href="#" class="btn addToCart">Añadir carrito</a>
-                            <a href="producto-detalles.html" class="btn view">Vista</a>
-                          </div>
-                        </div>
-                      </div> 
-
-                      <div class="producto">
-                        <div class="image__container">
-                          <img src="https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305" alt="">
-                        </div>
-                        <div class="producto__footer">
-                          <h1>Rejoles Originales</h1>
-                          <div class="rating">
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                          </div>
-                          <div class="price">$102.00</div>
-                        </div>
-                        <div class="bottom-producto">
-                          <div class="btn__group">
-                            <a href="#" class="btn addToCart">Añadir carrito</a>
-                            <a href="producto-detalles.html" class="btn view">Vista</a>
-                          </div>
-                        </div>
-                      </div> 
-
-                      <div class="producto">
-                        <div class="image__container">
-                          <img th:src="@{https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305}" alt="">
-                        </div>
-                        <div class="producto__footer">
-                          <h1>Rejoles Originales</h1>
-                          <div class="rating">
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                            <span>
-                                <i class="uil uil-star"></i>
-                            </span>
-                          </div>
-                          <div class="price">$102.00</div>
-                        </div>
-                        <div class="bottom-producto">
-                          <div class="btn__group">
-                            <a href="#" class="btn addToCart">Añadir carrito</a>
-                            <a href="producto-detalles.html" class="btn view">Vista</a>
-                          </div>
-                        </div>
-                      </div> 
-
+                      </div>
                     </div>
-                  </section>
-                  
-              
+                </section>
+
             </div>
             
        </div>
