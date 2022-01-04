@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/productos")
@@ -29,7 +30,8 @@ public class ProductosController {
 
 	@GetMapping("")
 	public String verProducto(Model model) {
-		model.addAttribute("productos", productoService.findAll());
+		List<Producto> productos = productoService.findAll();
+		model.addAttribute("productos",productos);
 		return "productos/produc";
 	}
 
