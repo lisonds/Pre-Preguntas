@@ -236,11 +236,11 @@
 	</tbody>
 </table>
 
-<div>
+<div >
     <div>
         <h1 >Agregar Producto</h1>
     </div>
-    <div class="div">
+    <div class="container-flex">
         <form  th:action="@{/productos/guardar}" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label  for="nombre">Nombre:</label>
@@ -249,10 +249,10 @@
                            placeholder="Ingrese el nombre del producto" autocomplete="off" required>
                 </div>
             </div>
-            <div >
+            <div class="container-flex">
                 <label  for="descripcion">Descripción:</label>
-                <div >
-        <textarea  id="descripcion" name="descripcion"
+                <div class="publicar-bar" >
+        <textarea  type="publicar" id="descripcion" name="descripcion"
                   placeholder="Ingrese la descripcion del producto" required
                   autocomplete="off"> </textarea>
                 </div>
@@ -265,13 +265,17 @@
                            placeholder="Ingrese el precio del producto" autocomplete="off" required>
                 </div>
             </div>
-
-            <div >
-                <label  for="img">Imagen:</label>
-                <div >
-                    <input type="file"  id="img" name="img">
+            	
+            
+            	<div >
+                    <label for="file-upload" class="bg1">
+                        <i class="fa fa-cloud-upload"></i> Subir archivo
+                    </label>
+                    <input id="file-upload" type="file" name="img"/>
+                    
                 </div>
-            </div>
+
+            
 
             <div >
                 <div class=>
@@ -279,6 +283,8 @@
                         <span></span> Guardar
                     </button>
                 </div>
+                
+	            
             </div>
         </form>
     </div>
