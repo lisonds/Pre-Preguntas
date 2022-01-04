@@ -81,7 +81,7 @@ public class PrincipalController {
 			
 			System.out.println(publicacion.getContenido());
 			System.out.println(publicacion.getImagen());
-			return "principal/index";
+			return "redirect:/principal";
 		}
 		
 		
