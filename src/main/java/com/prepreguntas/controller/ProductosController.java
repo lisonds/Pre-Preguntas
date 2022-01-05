@@ -35,6 +35,11 @@ public class ProductosController {
 		return "productos/produc";
 	}
 
+	@GetMapping("/detalle")
+	public String detallesProducto(){
+		return "productos/detalleProduct";
+	}
+
 	@GetMapping("/crear")
 	public String crearProducto() {
 		return "productos/crear";
