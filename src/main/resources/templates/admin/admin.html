@@ -236,29 +236,30 @@
 	</tbody>
 </table>
 
-<div >
+<div>
     <div>
         <h1 >Agregar Producto</h1>
     </div>
     <div class="container-flex">
         <form  th:action="@{/productos/guardar}" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label  for="nombre">Nombre:</label>
+                <label for="nombre">Nombre:</label>
                 <div class="col-sm-10">
                     <input type="text"  id="nombre" name="nombre"
                            placeholder="Ingrese el nombre del producto" autocomplete="off" required>
                 </div>
             </div>
-            <div class="container-flex">
+            <div class="form-group">
                 <label  for="descripcion">Descripción:</label>
                 <div class="publicar-bar" >
-        <textarea  type="publicar" id="descripcion" name="descripcion"
-                  placeholder="Ingrese la descripcion del producto" required
-                  autocomplete="off"> </textarea>
+                    <textarea  type="publicar" id="descripcion" name="descripcion"
+                               placeholder="Ingrese la descripcion del producto" required
+                               autocomplete="off">
+                    </textarea>
                 </div>
             </div>
 
-            <div >
+            <div class="form-group">
                 <label  for="precio">Precio:</label>
                 <div class="col-sm-10">
                     <input type="number" step="any" id="precio" name="precio"
@@ -267,24 +268,19 @@
             </div>
             	
             
-            	<div >
-                    <label for="file-upload" class="bg1">
-                        <i class="fa fa-cloud-upload"></i> Subir archivo
-                    </label>
-                    <input id="file-upload" type="file" name="img"/>
-                    
-                </div>
+            <div class="form-group">
+                <label for="file-upload" class="bg1">
+                    <i class="fa fa-cloud-upload"></i> Subir archivo
+                </label>
+                <input id="file-upload" type="file" name="img"/>
+            </div>
 
-            
-
-            <div >
-                <div class=>
-                    <button type="submit" class="btn">
+            <div class="form-group">
+                <div class="container">
+                    <button type="submit" class="btn btn-primary">
                         <span></span> Guardar
                     </button>
                 </div>
-                
-	            
             </div>
         </form>
     </div>
