@@ -54,4 +54,9 @@ public class PublicacionService implements BaseServices<Publicacion> {
         this.publicacionDao.deleteById(id);
 
     }
+
+    @Override
+    public Optional<Publicacion> get(int id) {
+        return publicacionDao.findById(id);
+    }
 }

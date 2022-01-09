@@ -44,9 +44,9 @@
             <div class="middle">
             <div class="container detalles" id="detalles">
 			 <article class="detalle-grid">
-				<img src="https://cdn4.chrono24.com/images/topmodels/2875-7wlcl6ogfoc0qxg22ox6up9m-Original.png?auto=compress&amp;h=305" alt="" class="img-fluid">
+				<img th:src="@{/imgProducto/{img} (img=${producto.imagen})}" alt="" class="img-fluid">
 				<div class="detalles-content">
-					<h3>Relojes Originales</h3>
+					<h3 th:text="${producto.nombre}">Relojes Originales</h3>
 					<div class="rating">
 						<span>
 							<i class="bx bxs-star"></i>
@@ -64,13 +64,11 @@
 							<i class="bx bx-star"></i>
 						</span>
 					</div>
-						<p class="price"><b>Precio: </b> $55.00</p>
-						<p class="description">
-							<b>Descripcion: </b> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quae ad ex sint expedita perspiciatis odit eligendi! Et quia ex aperiam dolorum sunt omnis maiores. Repudiandae delectus iste exercitationem vel?</span>
-						</p>
-						<p class="description">
-							<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptates consequuntur in assumenda odit hic, aut cupiditate dolorem aspernatur! Quibusdam iusto magnam vero maxime quisquam voluptatibus minima aliquam molestias, iure ratione commodi, reiciendis quasi.</span>
-						</p>
+                        <h2><b>Precio: </b></h2>
+                        <p class="price" th:text="${producto.precio}">$55.00</p>
+
+                        <h2><b>Descipcion: </b></h2>
+						<p class="description" th:text="${producto.descripcion}"></p>
 
 						<div class="bottom">
 							<div class="btn__group">

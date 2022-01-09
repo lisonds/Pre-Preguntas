@@ -70,6 +70,7 @@
                         </div>
 
                         <div class="producto__footer">
+                            <h1 th:text="${producto.nombre}">nombreProducto</h1>
                           <h1 th:text="${producto.descripcion}">Rejoles Originales</h1>
                           <div class="rating">
                             <span>
@@ -94,7 +95,7 @@
                         <div class="bottom-producto">
                           <div class="btn__group">
                             <a href="#" class="btn addToCart">Añadir carrito</a>
-                            <a th:href="@{/productos/detalle}" class="btn view">Vista</a>
+                            <a th:href="@{/productos/detalle/{id} (id=${producto.idProducto})}" class="btn view">Vista</a>
                           </div>
                         </div>
                       </div>

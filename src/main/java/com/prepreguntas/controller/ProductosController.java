@@ -7,14 +7,12 @@ import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/productos")
@@ -35,8 +33,13 @@ public class ProductosController {
 		return "productos/produc";
 	}
 
-	@GetMapping("/detalle")
-	public String detallesProducto(){
+	@GetMapping("/detalle/{id}")
+	public String detallesProducto(@PathVariable int id, Model model) {
+		LOGGER.info("ID producto enviando como parametro: {}", id);
+		Producto producto = new Producto();
+		Optional<Producto> optProducto = productoService.get(id);
+		producto = optProducto.get();
+		model.addAttribute("producto", producto);
 		return "productos/detalleProduct";
 	}
 
@@ -59,6 +62,8 @@ public class ProductosController {
 		productoService.saveOne(producto);
 		return "redirect:/productos";
 	}
+
+
 
 
 

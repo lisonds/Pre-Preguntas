@@ -44,4 +44,9 @@ public class ProductoServiceImpl implements BaseServices<Producto>{
     public void deleteById(int id) {
         productoDao.deleteById(id);
     }
+
+    @Override
+    public Optional<Producto> get(int id) {
+        return productoDao.findById(id);
+    }
 }

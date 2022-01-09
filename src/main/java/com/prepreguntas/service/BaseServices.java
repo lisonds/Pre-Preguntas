@@ -1,6 +1,7 @@
 package com.prepreguntas.service;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BaseServices<E>  {
 
@@ -11,5 +12,6 @@ public interface BaseServices<E>  {
     public E saveOne(E entity);   //Guardad o registrar un objeto Entidad.
     public E updateOne(E entity,int id); //Actualizar un registro.
     public void deleteById(int id);   //Eliminar un _Registro.
+    public Optional<E> get(int id);
 
 }
