@@ -17,6 +17,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -42,12 +43,12 @@ public class PrincipalController {
 
 				id = v.getId();
 			}
-			
+
 			return "redirect:/principal";
 		}
 
 	}
-	
+
 	@GetMapping("/principal")
 	public String principal(Map<String, Object> model) {
 		Usuario usuario1 = usuarioService.findOne(id);
@@ -64,12 +65,22 @@ public class PrincipalController {
 		System.out.println("prueba " + publicacion.getIdPublicacion());
 		return "principal/index";
 	}
+	@RequestMapping(value = "/publicacion/form")
+	public String Crear(Map<String, Object> model) {
+		System.out.println("PARA HACER PUBLICACCION LLEGO AQUIII tendria que pasar el objeto");
+		Publicacion publicacion =new Publicacion();
+		
+		model.put("publicacion", publicacion);
+		return "redirect:/principal";
+	}
 
 	@PostMapping("/publicacion/form")
 	public String CapturarPublicacion(Publicacion publicacion, Model model,
 			@RequestParam("file") MultipartFile imagen) {
-		/* EXTRAENDO IMAGEN PARA SUBIR AL BASE DE DATOS */
+		/* EXTRAENDO IMAGEN PARA SUBIR AL BASE DE DATOS */ 
+		
 		System.out.println("Antes del if");
+		/*
 		if (!imagen.isEmpty()) {
 			System.out.println("llego asta aqui");
 			Path directoriaoRecursos = Paths.get("src//main//resources//static/uploads");
@@ -86,9 +97,11 @@ public class PrincipalController {
 			}
 
 		}
+		*/
+		/*
 
 		System.out.println(publicacion.getContenido());
-		System.out.println(publicacion.getImagen());
+		System.out.println(publicacion.getImagen()); */
 		return "redirect:/principal";
 	}
 

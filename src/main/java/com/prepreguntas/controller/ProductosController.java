@@ -53,7 +53,9 @@ public class ProductosController {
 		if (producto.getIdProducto()==0) { // cuando se crea un producto
 			String nombreImagen= uploadFileService.saveImage(file);
 			producto.setImagen(nombreImagen);
+			System.out.println("nombre del imagen "+ nombreImagen);
 		}
+		
 		productoService.saveOne(producto);
 		return "redirect:/productos";
 	}

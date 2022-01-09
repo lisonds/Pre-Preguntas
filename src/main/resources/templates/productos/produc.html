@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--los Iconos-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
-    <link rel="stylesheet" th:href="@{css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
   <!--iconos Estrella-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"/>
-    <link rel="stylesheet" th:href="@{css/Produc.css}">
+    <link rel="stylesheet" th:href="@{/css/Produc.css}">
     
     <title>PRE-PREGUNTAS </title>
 </head>
@@ -70,7 +70,6 @@
                         </div>
 
                         <div class="producto__footer">
-                            <h1 th:text="${producto.nombre}">nombre producto</h1>
                           <h1 th:text="${producto.descripcion}">Rejoles Originales</h1>
                           <div class="rating">
                             <span>
@@ -95,7 +94,7 @@
                         <div class="bottom-producto">
                           <div class="btn__group">
                             <a href="#" class="btn addToCart">Añadir carrito</a>
-                            <a th:href="@{productos/detalle}" class="btn view">Vista</a>
+                            <a th:href="@{/productos/detalle}" class="btn view">Vista</a>
                           </div>
                         </div>
                       </div>

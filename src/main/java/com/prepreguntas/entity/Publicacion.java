@@ -30,10 +30,10 @@ public class Publicacion {
 
     }
 
-    	@PrePersist
-    	public void prePersist() {
-    		fechaPublicacion=new Date();
-    	}
+	@PrePersist
+	public void prePersist() {
+		fechaPublicacion=new Date();
+	}
   
     public int getIdPublicacion() {
         return idPublicacion;

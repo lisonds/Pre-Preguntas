@@ -326,6 +326,17 @@ main .container .left .profile{
     }
 }
 
+@media only screen and (max-width: 1200px){
+    .container{
+        padding: 0 3rem;
+    }
+}
+@media only screen and (max-width: 768px){
+    .container{
+        padding: 0 5rem;
+    }
+}
+
 /*medio PRODUCTOS*/
 
 .rating span{
@@ -340,7 +351,7 @@ main .container .left .profile{
     padding: 0 3rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 3rem 1rem;
 }
 .middle .productos .productos__center .producto{
@@ -399,4 +410,47 @@ main .container .left .profile{
     text-align: center;
     padding: 1px;
     height: 1px;
+}
+
+/*producto detalle*/
+
+.detalles{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+}
+.detalle-grid{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+}
+.detalles .img-fluid{
+    max-width: 380px;
+    width: 100%;
+    margin: 5rem auto;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, .2);
+} 
+.detalles-content{
+    padding: 2rem;
+}
+.detalles-content h3{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.detalles-content .precio span{
+    color: var(--azul);
+    font-size: 2rem;
+    font-weight: 600;
+}
+.detalles-content .description{
+    padding-top: 2rem;
+}
+.detalles-content .description span{
+    line-height: 2.8rem;
+}
+@media only screen and (max-width: 840px){
+    .detalle-grid{
+        grid-template-columns: 1fr;
+    }
 }
